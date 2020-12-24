@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
+import classNames from 'classnames'
 import logo from './logo.png'
 import bal from './bal.jpg'
 import SearchIcon from '@material-ui/icons/Search'
@@ -7,47 +8,54 @@ import PersonIcon from '@material-ui/icons/Person'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 
 function Header() {
-    useEffect(() => {
-        window.onscroll = function () {
-            let header = document.getElementsByClassName('header')
-            if (window.scrollY > 630) {
-                header.classList.add('updated-class')
+    const [scrolled, setScrolled] = useState()
+    const classes = classNames('header', {
+        scrolled: scrolled,
+    })
+    useEffect((_) => {
+        const handleScroll = (_) => {
+            if (window.pageYOffset > 1) {
+                setScrolled(true)
             } else {
-                header.classList.remove('updated-class')
+                setScrolled(false)
             }
         }
-    }, [0])
+        window.addEventListener('scroll', handleScroll)
+        return (_) => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     return (
-        <div className='header_img'>
-            <div className='header'>
+        <div className='header_tot'>
+            <div className={classes}>
                 <div className='header_logo'>
                     <img className='logo' src={logo} alt='' />
                 </div>
                 <div className='header_nav'>
-                    <ul class='nav-links'>
+                    <ul class='nav_links'>
                         <li>
-                            <a class='nav-link' href='#'>
-                                E-Masğaza
+                            <a class='nav_link' href='#'>
+                                E-Mağaza
                             </a>
                         </li>
                         <li>
-                            <a class='nav-link' href='#'>
+                            <a class='nav_link' href='#'>
                                 Kampanyalar
                             </a>
                         </li>
                         <li>
-                            <a class='nav-link' href='#'>
+                            <a class='nav_link' href='#'>
                                 Hakkımızda
                             </a>
                         </li>{' '}
                         <li>
-                            <a class='nav-link' href='#'>
+                            <a class='nav_link' href='#'>
                                 Blog
                             </a>
                         </li>{' '}
                         <li>
-                            <a class='nav-link' href='#'>
+                            <a class='nav_link' href='#'>
                                 Bal Parmak Arıcılık Akademisi
                             </a>
                         </li>

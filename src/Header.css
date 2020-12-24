@@ -2,8 +2,15 @@
     box-sizing: border-box;
 }
 
-.header_img {
+.header_tot {
     width: 100%;
+}
+
+.header_logo {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 #bal {
@@ -17,25 +24,38 @@
     height: 80px;
     display: flex;
     align-items: center;
-    position: sticky;
+    position: fixed;
     justify-content: space-around;
     top: 0;
-    transition: background 0.5s Ease;
+    transition: background 1s Ease;
     background-color: transparent;
     z-index: 100;
 }
 
-.updated-class {
-    background-color: red;
-    transition: background 1s linear;
+.header.scrolled {
+    background-color: rgb(233, 171, 56, 0.7);
 }
 
 .header_nav {
+    flex: 2;
+}
+
+.nav_links {
+    width: 100%;
+    list-style: none;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
-p {
-    padding-left: 25px;
+.nav_link {
+    color: white;
+    text-decoration: none;
+}
+
+.header_icons {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 span {
