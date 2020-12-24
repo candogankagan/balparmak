@@ -1,0 +1,33 @@
+.home {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.features {
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.comb,
+.bread,
+.flower {
+    text-align: center;
+}
+
+.comb h3,
+.bread h3,
+.flower h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(233, 171, 56);
+}
+
+.comb p,
+.bread p,
+.flower p {
+    width: 74%;
+    margin: auto;
+}

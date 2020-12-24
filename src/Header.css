@@ -14,7 +14,6 @@
 }
 
 #bal {
-    position: absolute;
     top: 0px;
     width: 100%;
 }
@@ -29,7 +28,7 @@
     top: 0;
     transition: background 1s Ease;
     background-color: transparent;
-    z-index: 100;
+    z-index: 1;
 }
 
 .header.scrolled {
