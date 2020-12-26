@@ -1,0 +1,34 @@
+.all_slider {
+    margin-top: 50px;
+    width: 80%;
+    margin: auto;
+    color: rgb(233, 171, 56);
+}
+
+.slider_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider_content img {
+    width: 30%;
+    height: 250px;
+}
+
+.slider_content p {
+    font-weight: 650;
+    font-size: large;
+}
+
+.slider_content button {
+    background-color: white;
+    border: 1px solid rgb(233, 171, 56);
+    color: rgb(233, 171, 56);
+    width: 22%;
+    height: 30px;
+    margin-top: 10px;
+    font-size: larger;
+    font-weight: 500;
+}
