@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -11,6 +13,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    margin-left: 30px;
 }
 
 #bal {
@@ -26,17 +29,17 @@
     position: fixed;
     justify-content: space-around;
     top: 0;
-    transition: background 1s Ease;
     background-color: transparent;
     z-index: 1;
+    transition: background 1s Ease;
 }
 
-.header.scrolled {
+.scrolled {
     background-color: rgb(233, 171, 56, 0.7);
 }
 
 .header_nav {
-    flex: 2;
+    flex: 2.5;
 }
 
 .nav_links {
@@ -49,14 +52,36 @@
 .nav_link {
     color: white;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .header_icons {
     flex: 1;
     display: flex;
     justify-content: center;
+    color: rgb(233, 171, 56);
 }
 
 span {
-    padding-left: 10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.menu_bar {
+    display: none;
+}
+
+@media screen and (max-width: 1077px) {
+    .menu_bar {
+        display: flex;
+        flex: 3;
+        margin-left: 15px;
+    }
+    .nav_link {
+        display: none;
+    }
+    .header_icons {
+        margin-right: 15px;
+    }
 }

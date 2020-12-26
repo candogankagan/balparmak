@@ -3,32 +3,51 @@ import './Header.css'
 import classNames from 'classnames'
 import logo from './logo.png'
 import bal from './bal.jpg'
+import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
 import PersonIcon from '@material-ui/icons/Person'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 
 function Header() {
     const [scrolled, setScrolled] = useState()
+    const [press, setPress] = useState()
     const classes = classNames('header', {
         scrolled: scrolled,
     })
-    useEffect((_) => {
-        const handleScroll = (_) => {
-            if (window.pageYOffset > 1) {
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.pageYOffset > 30) {
                 setScrolled(true)
             } else {
                 setScrolled(false)
             }
         }
         window.addEventListener('scroll', handleScroll)
-        return (_) => {
+        return () => {
             window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    useEffect(() => {
+        const handlesize = () => {
+            if (window.innerWidth < 1000) setPress(true)
+            else {
+                setPress(false)
+            }
+        }
+        window.addEventListener('resize', press)
+        return () => {
+            window.removeEventListener('scroll', handlesize)
         }
     }, [])
 
     return (
         <div className='header_tot'>
+            <img id='bal' src={bal} alt='' srcset='' />
             <div className={classes}>
+                <div className='menu_bar'>
+                    <MenuIcon />
+                </div>
                 <div className='header_logo'>
                     <img className='logo' src={logo} alt='' />
                 </div>
@@ -73,7 +92,6 @@ function Header() {
                     </span>
                 </div>
             </div>
-            <img id='bal' src={bal} alt='' srcset='' />
         </div>
     )
 }
