@@ -55,6 +55,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.nav_link:hover {
+    font-weight: 900;
+}
+
 .header_icons {
     flex: 1;
     display: flex;
@@ -78,10 +82,7 @@ span {
         flex: 3;
         margin-left: 15px;
     }
-    .nav_link {
+    .nav_links {
         display: none;
-    }
-    .header_icons {
-        margin-right: 15px;
     }
 }

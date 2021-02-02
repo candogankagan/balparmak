@@ -10,7 +10,6 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 
 function Header() {
     const [scrolled, setScrolled] = useState()
-    const [press, setPress] = useState()
     const classes = classNames('header', {
         scrolled: scrolled,
     })
@@ -25,19 +24,6 @@ function Header() {
         window.addEventListener('scroll', handleScroll)
         return () => {
             window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
-
-    useEffect(() => {
-        const handlesize = () => {
-            if (window.innerWidth < 1000) setPress(true)
-            else {
-                setPress(false)
-            }
-        }
-        window.addEventListener('resize', press)
-        return () => {
-            window.removeEventListener('scroll', handlesize)
         }
     }, [])
 
